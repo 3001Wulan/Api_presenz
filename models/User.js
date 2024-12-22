@@ -35,7 +35,7 @@ const User = sequelize.define(
     },
   },
   {
-    tableName: 'Users',  // Nama tabel yang digunakan di database
+    tableName: 'User',  // Nama tabel yang digunakan di database
     timestamps: true,    // Menyimpan createdAt dan updatedAt
   }
 );
