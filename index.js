@@ -4,8 +4,7 @@ const authRoutes = require('./routes/authRoutes'); // Mengimpor route auth
 const rekapRoutes = require('./routes/rekapRoutes'); 
 const morgan = require('morgan');
 const catatanRoutes = require('./routes/catatanRoutes');
-
-
+const arsipRoutes = require('./routes/arsipRoutes');
 
 const app = express();
 
@@ -15,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use('/api/catatan', catatanRoutes);
 app.use('/api/rekapitulasi', rekapRoutes);
+app.use('/api/arsip', arsipRoutes);
 
 // Rute utama
 app.get('/', (req, res) => {
