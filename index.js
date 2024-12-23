@@ -8,7 +8,7 @@ const arsipRoutes = require('./routes/arsipRoutes');
 const absensiujianRoutes = require('./routes/absensiujianRoutes');
 const perubahanabsenRoutes = require('./routes/perubahanabsenRoutes');
 const absensipratikumRoutes = require('./routes/absensipratikumRoutes');
-
+const notifikasiRoutes = require('./routes/notifikasiRoutes');
 
 
 const app = express();
@@ -23,6 +23,7 @@ app.use('/api/arsip', arsipRoutes);
 app.use('/api/absensi-ujian', absensiujianRoutes);
 app.use('/api/perubahanabsen', perubahanabsenRoutes);
 app.use('/api/absensi-pratikum', absensipratikumRoutes);
+app.use('/api/notifikasi', notifikasiRoutes);
 
 // Rute utama
 app.get('/', (req, res) => {
