@@ -5,6 +5,7 @@ const rekapRoutes = require('./routes/rekapRoutes');
 const morgan = require('morgan');
 const catatanRoutes = require('./routes/catatanRoutes');
 const arsipRoutes = require('./routes/arsipRoutes');
+const absensiujianRoutes = require('./routes/absensiujianRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(morgan('dev'));
 app.use('/api/catatan', catatanRoutes);
 app.use('/api/rekapitulasi', rekapRoutes);
 app.use('/api/arsip', arsipRoutes);
+app.use('/api/absensi-ujian', absensiujianRoutes);
 
 // Rute utama
 app.get('/', (req, res) => {
