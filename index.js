@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes'); // Mengimpor route auth
-const meetingRoutes = require('./routes/meetingRoutes'); // Mengimpor route meeting
+const rekapRoutes = require('./routes/rekapRoutes'); 
 const morgan = require('morgan');
 const catatanRoutes = require('./routes/catatanRoutes');
 
@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use('/api/catatan', catatanRoutes);
+app.use('/api/rekapitulasi', rekapRoutes);
 
 // Rute utama
 app.get('/', (req, res) => {
@@ -23,8 +24,7 @@ app.get('/', (req, res) => {
 // Menambahkan route untuk autentikasi
 app.use('/api/auth', authRoutes);
 
-// Menambahkan route untuk pertemuan
-app.use('/api/meetings', meetingRoutes);
+
 
 // Middleware untuk menangani error
 app.use((err, req, res, next) => {
