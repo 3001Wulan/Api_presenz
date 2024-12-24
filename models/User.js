@@ -29,11 +29,23 @@ const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: true,  // Role boleh kosong jika tidak ditentukan
     },
-    preferensi: {
-      type: DataTypes.STRING,
-      allowNull: true,  // Preferensi pengguna boleh kosong
+    bio: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     },
-  },
+    no_handphone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    jenis_kelamin: {
+      type: DataTypes.ENUM('Laki-laki', 'Perempuan'),
+      allowNull: false,
+    },
+    tanggal_lahir: {
+      type: DataTypes.DATEONLY,
+      allowNull: false,
+    },
+    },
   {
     tableName: 'User',  // Nama tabel yang digunakan di database
     timestamps: true,    // Menyimpan createdAt dan updatedAt
