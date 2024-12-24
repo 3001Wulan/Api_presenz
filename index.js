@@ -32,6 +32,7 @@ app.use('/api/absensi', absensiRoutes);
 app.use('/users', profilRoutes);
 
 
+
 // Rute utama
 app.get('/', (req, res) => {
   res.send('Welcome to the API!');
